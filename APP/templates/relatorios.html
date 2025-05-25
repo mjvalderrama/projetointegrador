@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios - Sistema de Protocolos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Relatórios de Protocolos</h2>
+        <p><strong>Total de Protocolos:</strong> {{ total }}</p>
+        <p><strong>Protocolos Pendentes:</strong> {{ pendentes }}</p>
+        <p><strong>Protocolos Recebidos:</strong> {{ recebidos }}</p>
+        <p><strong>Protocolos Finalizados:</strong> {{ finalizados }}</p>
+        
+        <h3>Protocolos por Tipo:</h3>
+        <ul>
+            {% for tipo in tipos %}
+                <li>{{ tipo[0] }}: {{ tipo[1] }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('dashboard') }}" class="button">Voltar ao Dashboard</a>
+    </div>
+</body>
+</html>

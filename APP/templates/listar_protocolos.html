@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Protocolos - Sistema de Protocolos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Protocolos Registrados</h2>
+        <a href="{{ url_for('adicionar_protocolo') }}" class="button">Adicionar Novo Protocolo</a>
+        <a href="{{ url_for('dashboard') }}" class="button secondary">Voltar ao Dashboard</a>
+
+        {% if protocolos %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Número</th>
+                        <th>Data</th>
+                        <th>Tipo</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in protocolos %}
+                    <tr>
+                        <td>{{ p[0] }}</td>
+                        <td>{{ p[1] }}</td>
+                        <td>{{ p[2] }}</td>
+                        <td>{{ p[3] }}</td>
+                        <td>{{ p[4] }}</td>
+                        <td class="actions">
+                            <a href="{{ url_for('detalhes_protocolo', id=p[0]) }}" class="button small">Detalhes</a>
+                            <a href="{{ url_for('editar_protocolo', id=p[0]) }}" class="button small">Editar</a>
+                            <form action="{{ url_for('deletar_protocolo', id=p[0]) }}" method="POST" style="display:inline;">
+                                <button type="submit" class="button small danger" onclick="return confirm('Tem certeza que deseja deletar este protocolo?');">Deletar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>Nenhum protocolo encontrado.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

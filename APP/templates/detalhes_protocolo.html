@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Protocolo - Sistema de Protocolos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Detalhes do Protocolo</h2>
+        {% if protocolo %}
+            <p><strong>ID:</strong> {{ protocolo.id }}</p>
+            <p><strong>Número:</strong> {{ protocolo.numero }}</p>
+            <p><strong>Data:</strong> {{ protocolo.data }}</p>
+            <p><strong>Tipo:</strong> {{ protocolo.tipo }}</p>
+            <p><strong>Remetente:</strong> {{ protocolo.remetente }}</p>
+            <p><strong>Destinatário:</strong> {{ protocolo.destinatario }}</p>
+            <p><strong>Assunto:</strong> {{ protocolo.assunto }}</p>
+            <p><strong>Status:</strong> {{ protocolo.status }}</p>
+            <a href="{{ url_for('listar_protocolos') }}" class="button">Voltar à Lista</a>
+            <a href="{{ url_for('editar_protocolo', id=protocolo.id) }}" class="button secondary">Editar</a>
+        {% else %}
+            <p>Protocolo não encontrado.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
