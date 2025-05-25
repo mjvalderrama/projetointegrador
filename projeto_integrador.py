@@ -13,10 +13,10 @@ from fpdf import FPDF
 
 # Conexão com o banco de dados MySQL
 db = mysql.connector.connect(
-    host="protocolo.mysql.uhserver.com",
-    user="projetopi",
-    password="pr@jet@pi*1",
-    database="protocolo"
+    host="",
+    user="",
+    password="",
+    database=""
 )
 cursor = db.cursor()
 
