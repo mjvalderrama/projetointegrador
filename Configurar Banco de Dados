@@ -1,0 +1,9 @@
+**Configuração do Banco de Dados**
+
+O sistema está configurado para conectar a um banco de dados MySQL remoto. As credenciais de conexão são:
+
+Host: 
+Usuário: 
+Senha: 
+Banco de Dados: 
+Certifique-se de que o banco de dados protocolo e as tabelas usuarios e protocolos existam com a estrutura correta.
