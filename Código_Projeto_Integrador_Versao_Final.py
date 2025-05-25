@@ -22,10 +22,10 @@ try:
     # Conexão com o banco de dados MySQL
     print("Tentando conectar ao banco de dados...")
     db = mysql.connector.connect(
-        host="protocolo.mysql.uhserver.com",
-        user="projetopi",
-        password="pr@jet@pi*1",
-        database="protocolo"
+        host="",
+        user="",
+        password="",
+        database=""
     )
     cursor = db.cursor()
     print("Conexão com o banco de dados estabelecida com sucesso!")
